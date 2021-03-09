@@ -1,0 +1,59 @@
+﻿@model List<ReturnInvoiceInfoDto>;
+
+@{
+    ViewData["Title"] = "ReturnList";
+}
+
+
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header border-transparent">
+            <h3 class="card-title">Latest Orders</h3>
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+
+                
+            </div>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table m-0">
+                    <thead>
+                        <tr>
+                            <th>SKU</th>
+                            <th>Ürün Adı</th>
+                            <th>Renk</th>
+                            <th>Beden</th>
+                            <th>Tarih</th>
+                            <th>Kullanıcı</th>
+                            <th>Miktar</th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody class="data">
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.SKU</td>
+                                <td>@item.Description</td>
+                                <td>@item.ColorCode</td>
+                                <td>@item.ItemDim1Code</td>
+                                <td>@item.CreatedDate</td>
+                                <td>@item.CreatedUserName</td>
+                                <td>@item.Qty1</td>
+                                
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+     
+    </div>
+</div>
